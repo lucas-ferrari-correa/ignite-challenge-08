@@ -35,6 +35,7 @@ describe("Get Statement Operation", () => {
 
     const statement = await createStatementUseCase.execute({
       amount: 100,
+      destination_id: null,
       description: 'Test',
       type: OperationType.DEPOSIT,
       user_id: String(user.id)
@@ -59,6 +60,7 @@ describe("Get Statement Operation", () => {
 
       const statement = await createStatementUseCase.execute({
         amount: 100,
+        destination_id: null,
         description: 'Test',
         type: OperationType.DEPOSIT,
         user_id: String(user.id)

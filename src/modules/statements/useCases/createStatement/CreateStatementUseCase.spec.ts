@@ -33,6 +33,7 @@ describe("Create Statement", () => {
 
     const statement = await createStatementUseCase.execute({
       amount: 100,
+      destination_id: null,
       description: "Test",
       type: OperationType.DEPOSIT,
       user_id: String(user.id),
@@ -46,6 +47,7 @@ describe("Create Statement", () => {
     await expect(async () => {
       await createStatementUseCase.execute({
         amount: 100,
+        destination_id: null,
         description: "Test",
         type: OperationType.DEPOSIT,
         user_id: 'non existing user',
@@ -62,6 +64,7 @@ describe("Create Statement", () => {
 
     await createStatementUseCase.execute({
       amount: 500,
+      destination_id: null,
       description: "Test",
       type: OperationType.DEPOSIT,
       user_id: String(user.id),
@@ -69,6 +72,7 @@ describe("Create Statement", () => {
 
     const withDrawStatement = await createStatementUseCase.execute({
       amount: 500,
+      destination_id: null,
       description: "Test",
       type: OperationType.WITHDRAW,
       user_id: String(user.id),
@@ -88,6 +92,7 @@ describe("Create Statement", () => {
 
       await createStatementUseCase.execute({
         amount: 500,
+        destination_id: null,
         description: "Test",
         type: OperationType.DEPOSIT,
         user_id: String(user.id),
@@ -95,6 +100,7 @@ describe("Create Statement", () => {
 
       await createStatementUseCase.execute({
         amount: 501,
+        destination_id: null,
         description: "Test",
         type: OperationType.WITHDRAW,
         user_id: String(user.id),
